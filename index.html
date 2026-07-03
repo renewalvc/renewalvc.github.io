@@ -1,840 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renewal Ventures — Investing in the Agentic Era</title>
-<meta name="description" content="Renewal Ventures invests in pioneering agentic AI companies and advises corporations on implementing cutting-edge AI to automate and scale their businesses.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='13' fill='none' stroke='%2346d9a4' stroke-width='2' stroke-dasharray='61 21' stroke-linecap='round' transform='rotate(-50 15 15)'/%3E%3Cpath d='M20.5 6.5 L24 4.5 L23 8.5 Z' fill='%2346d9a4'/%3E%3Ccircle cx='15' cy='15' r='4.5' fill='%2346d9a4'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewal Ventures — Agentic Technology Capital</title>
+<meta name="description" content="Renewal Ventures funds and incubates disruptive agentic startups — and rebuilds enterprises around AI that acts, not just answers.">
+<link rel="canonical" href="https://renewalvc.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Renewal Ventures">
+<meta property="og:title" content="Renewal Ventures — Agentic Technology Capital">
+<meta property="og:description" content="We back and build the agents that will run tomorrow's companies. Funding, incubation, and enterprise AI advisory.">
+<meta property="og:url" content="https://renewalvc.com/">
+<meta property="og:image" content="https://renewalvc.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Renewal Ventures — Agentic Technology Capital">
+<meta name="twitter:description" content="We back and build the agents that will run tomorrow's companies.">
+<meta name="twitter:image" content="https://renewalvc.com/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307070f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%238b7cf8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #070b09;
-    --bg-soft: #0b120f;
-    --panel: rgba(255, 255, 255, 0.028);
-    --panel-hover: rgba(255, 255, 255, 0.05);
-    --line: rgba(255, 255, 255, 0.08);
-    --line-soft: rgba(255, 255, 255, 0.055);
-    --text: #eaefec;
-    --muted: #96a29b;
-    --faint: #6b7871;
-    --accent: #46d9a4;
-    --accent-soft: rgba(70, 217, 164, 0.13);
-    --accent-line: rgba(70, 217, 164, 0.35);
-    --serif: "Instrument Serif", Georgia, serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --container: 1120px;
-  }
+:root {
+  --bg: #07070f;
+  --panel: #0b0b18;
+  --text: #e8e6f5;
+  --muted: #9d97c4;
+  --faint: #6f6a95;
+  --accent: #8b7cf8;
+  --cyan: #67e8f9;
+  --line: rgba(139, 124, 248, .15);
+  --line-mid: rgba(139, 124, 248, .2);
+  --line-strong: rgba(139, 124, 248, .35);
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --pad-x: 56px;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
-  ::selection { background: var(--accent-soft); color: var(--accent); }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-  a { color: inherit; text-decoration: none; }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
+.container { max-width: 1440px; margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
 
-  .container {
-    width: min(var(--container), calc(100% - 48px));
-    margin: 0 auto;
-  }
+.mono { font-family: var(--mono); }
 
-  /* ---------- Background ---------- */
-  .bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 70% 45% at 50% -8%, rgba(70, 217, 164, 0.09), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 88% 28%, rgba(70, 150, 217, 0.05), transparent 60%),
-      var(--bg);
-  }
-  .bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
-  }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--cyan);
+  letter-spacing: .16em;
+}
 
-  /* ---------- Nav ---------- */
-  .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    transition: background 0.3s ease, border-color 0.3s ease;
-    border-bottom: 1px solid transparent;
-  }
-  .nav.scrolled {
-    background: rgba(7, 11, 9, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom-color: var(--line-soft);
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.01em;
-  }
-  .brand-mark {
-    width: 30px; height: 30px;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .nav-links a { transition: color 0.2s ease; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-cta {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--text);
-    border: 1px solid var(--line);
-    padding: 9px 18px;
-    border-radius: 100px;
-    transition: border-color 0.2s ease, background 0.2s ease;
-  }
-  .nav-cta:hover { border-color: var(--accent-line); background: var(--accent-soft); }
+@keyframes rvBlink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+@keyframes rvLogIn { from { opacity: .4; transform: translateY(6px) } to { opacity: 1; transform: none } }
+@keyframes rvPulse { 0%, 100% { opacity: .55; transform: scale(1) } 50% { opacity: 1; transform: scale(1.06) } }
+@keyframes rvTicker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+@keyframes rvGlow { 0%, 100% { opacity: .5 } 50% { opacity: 1 } }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    padding: 160px 0 80px;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 30px;
-  }
-  .eyebrow::before {
-    content: "";
-    width: 22px; height: 1px;
-    background: var(--accent-line);
-  }
-  h1 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(46px, 7.2vw, 88px);
-    line-height: 1.04;
-    letter-spacing: -0.015em;
-    max-width: 13ch;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .hero-sub {
-    margin-top: 30px;
-    font-size: clamp(16px, 1.6vw, 19px);
-    line-height: 1.65;
-    color: var(--muted);
-    max-width: 58ch;
-  }
-  .hero-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 42px;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 14px 26px;
-    border-radius: 100px;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  }
-  .btn svg { transition: transform 0.2s ease; }
-  .btn:hover svg { transform: translateX(3px); }
-  .btn-primary {
-    background: var(--accent);
-    color: #06231a;
-  }
-  .btn-primary:hover { background: #5ce4b3; transform: translateY(-1px); }
-  .btn-ghost {
-    border: 1px solid var(--line);
-    color: var(--text);
-  }
-  .btn-ghost:hover { border-color: var(--accent-line); background: var(--accent-soft); transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important }
+  html { scroll-behavior: auto }
+}
 
-  /* ---------- Ticker ---------- */
-  .ticker {
-    border-top: 1px solid var(--line-soft);
-    border-bottom: 1px solid var(--line-soft);
-    overflow: hidden;
-    padding: 18px 0;
-    display: flex;
-  }
-  .ticker-track {
-    display: flex;
-    gap: 56px;
-    padding-right: 56px;
-    white-space: nowrap;
-    animation: ticker 42s linear infinite;
-    flex-shrink: 0;
-  }
-  .ticker span {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--faint);
-    display: inline-flex;
-    align-items: center;
-    gap: 56px;
-  }
-  .ticker span::after {
-    content: "◆";
-    font-size: 7px;
-    color: var(--accent);
-    opacity: 0.6;
-  }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }
+/* ---------- backdrop ---------- */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139, 124, 248, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 124, 248, .05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
 
-  /* ---------- Sections ---------- */
-  section { padding: 120px 0; }
-  .section-head { margin-bottom: 64px; }
-  .kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
-  }
-  .kicker::before {
-    content: "";
-    width: 22px; height: 1px;
-    background: var(--accent-line);
-  }
-  h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(34px, 4.4vw, 52px);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    max-width: 22ch;
-  }
-  h2 em { font-style: italic; color: var(--accent); }
-  .section-sub {
-    margin-top: 18px;
-    color: var(--muted);
-    max-width: 60ch;
-    font-size: 17px;
-  }
+/* ---------- nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px var(--pad-x);
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 7, 15, .85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+  animation: rvPulse 2.4s ease-in-out infinite;
+}
+.brand-name {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.nav-links a { color: var(--muted); transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.btn-connect {
+  color: var(--bg);
+  background: var(--accent);
+  padding: 8px 16px;
+  font-weight: 700;
+  transition: filter .2s;
+}
+.nav-links a.btn-connect:hover { filter: brightness(1.15); color: var(--bg); }
 
-  /* ---------- Pillars ---------- */
-  .pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .pillar {
-    position: relative;
-    border: 1px solid var(--line-soft);
-    border-radius: 20px;
-    padding: 44px 40px;
-    background: var(--panel);
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    overflow: hidden;
-  }
-  .pillar:hover {
-    background: var(--panel-hover);
-    border-color: var(--line);
-    transform: translateY(-3px);
-  }
-  .pillar::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 40px; right: 40px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .pillar:hover::after { opacity: 1; }
-  .pillar-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--accent);
-    margin-bottom: 26px;
-  }
-  .pillar h3 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .pillar-tag {
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-bottom: 20px;
-  }
-  .pillar p {
-    color: var(--muted);
-    font-size: 15.5px;
-    margin-bottom: 24px;
-  }
-  .pillar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .pillar li {
-    display: flex;
-    gap: 12px;
-    align-items: baseline;
-    font-size: 14.5px;
-    color: var(--muted);
-  }
-  .pillar li::before {
-    content: "→";
-    color: var(--accent);
-    font-size: 13px;
-    flex-shrink: 0;
-  }
-  .pillar li strong { color: var(--text); font-weight: 500; }
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 56px;
+  padding-top: 104px;
+  padding-bottom: 88px;
+  align-items: center;
+}
+.hero .eyebrow { font-size: 13px; letter-spacing: .14em; margin-bottom: 26px; }
+.hero h1 {
+  margin: 0 0 28px;
+  font-size: clamp(44px, 4.6vw, 68px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+.hero h1 span { color: var(--accent); }
+.hero-sub {
+  margin: 0 0 40px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 520px;
+  text-wrap: pretty;
+}
+.btn-primary {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px 28px;
+  transition: filter .2s;
+}
+.btn-primary:hover { filter: brightness(1.15); }
 
-  /* ---------- Thesis band ---------- */
-  .thesis {
-    padding: 140px 0;
-    text-align: center;
-  }
-  .thesis blockquote {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(28px, 4vw, 46px);
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    max-width: 26ch;
-    margin: 0 auto;
-  }
-  .thesis em { font-style: italic; color: var(--accent); }
-  .thesis figcaption {
-    margin-top: 28px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--faint);
-  }
+/* ---------- terminal ---------- */
+.terminal {
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  box-shadow: 0 0 60px rgba(139, 124, 248, .18);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-mid);
+  color: var(--muted);
+  font-size: 11.5px;
+}
+.terminal-bar .host { display: flex; align-items: center; gap: 8px; }
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  display: inline-block;
+  animation: rvGlow 1.8s ease-in-out infinite;
+}
+.terminal-bar .scenario { color: var(--cyan); }
+.terminal-body { padding: 20px 22px; min-height: 190px; }
+.terminal-body .ln { animation: rvLogIn .5s both; }
+.terminal-prompt { color: var(--cyan); }
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 17px;
+  background: var(--cyan);
+  margin-left: 2px;
+  vertical-align: -3px;
+  animation: rvBlink 1s step-end infinite;
+}
 
-  /* ---------- Focus grid ---------- */
-  .focus-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .focus-card {
-    border: 1px solid var(--line-soft);
-    border-radius: 20px;
-    padding: 36px 34px;
-    background: var(--panel);
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  }
-  .focus-card:hover {
-    background: var(--panel-hover);
-    border-color: var(--accent-line);
-    transform: translateY(-3px);
-  }
-  .focus-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    background: var(--accent-soft);
-    display: grid;
-    place-items: center;
-    margin-bottom: 22px;
-    color: var(--accent);
-  }
-  .focus-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-  .focus-card p {
-    font-size: 14.5px;
-    color: var(--muted);
-  }
+/* ---------- ticker ---------- */
+.ticker {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 14px 0;
+  background: rgba(11, 11, 24, .7);
+}
+.ticker-track {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  animation: rvTicker 26s linear infinite;
+}
+.ticker-track .d { color: var(--accent); }
 
-  /* ---------- Advisory steps ---------- */
-  .advisory-layout {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 72px;
-    align-items: start;
-  }
-  .advisory-side { position: sticky; top: 120px; }
-  .steps {
-    display: flex;
-    flex-direction: column;
-  }
-  .step {
-    display: grid;
-    grid-template-columns: 72px 1fr;
-    gap: 28px;
-    padding: 34px 0;
-    border-top: 1px solid var(--line-soft);
-  }
-  .step:last-child { border-bottom: 1px solid var(--line-soft); }
-  .step-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 30px;
-    color: var(--accent);
-    line-height: 1;
-    padding-top: 3px;
-  }
-  .step h3 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-  .step p {
-    font-size: 14.5px;
-    color: var(--muted);
-    max-width: 46ch;
-  }
+/* ---------- thesis ---------- */
+.thesis { padding-top: 120px; padding-bottom: 120px; scroll-margin-top: 80px; }
+.thesis-inner { max-width: 900px; }
+.thesis .eyebrow { display: block; margin-bottom: 28px; }
+.thesis h2 {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+}
+.thesis h2 span { color: var(--accent); }
+.thesis p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 640px;
+  text-wrap: pretty;
+}
 
-  /* ---------- Contact ---------- */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 64px;
-  }
-  .contact-card {
-    border: 1px solid var(--line-soft);
-    border-radius: 20px;
-    padding: 48px 42px;
-    background: var(--panel);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  }
-  .contact-card:hover {
-    background: var(--panel-hover);
-    border-color: var(--accent-line);
-    transform: translateY(-3px);
-  }
-  .contact-card .pillar-tag { margin-bottom: 14px; }
-  .contact-card h3 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 1.25;
-    margin-bottom: 14px;
-    max-width: 18ch;
-  }
-  .contact-card p {
-    color: var(--muted);
-    font-size: 15px;
-    margin-bottom: 30px;
-    max-width: 42ch;
-  }
-  .contact-card .btn { margin-top: auto; }
+/* ---------- what we do ---------- */
+.offerings { border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+.offerings .eyebrow { display: block; padding: 64px 0 40px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding-bottom: 96px;
+}
+.card {
+  padding: 44px 40px;
+  border: 1px solid var(--line-mid);
+  background: var(--panel);
+  transition: border-color .25s, box-shadow .25s;
+}
+.card:hover { border-color: var(--accent); box-shadow: 0 0 40px rgba(139, 124, 248, .12); }
+.card-num { font-family: var(--mono); font-size: 12px; color: var(--cyan); margin-bottom: 18px; }
+.card h3 { font-size: 24px; font-weight: 600; margin: 0 0 12px; }
+.card p { margin: 0 0 28px; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+.card-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.card-specs div { display: flex; justify-content: space-between; gap: 12px; }
+.card-specs span:last-child { color: var(--text); text-align: right; }
 
-  /* ---------- Footer ---------- */
-  footer {
-    border-top: 1px solid var(--line-soft);
-    padding: 44px 0;
-  }
-  .footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .footer-inner .brand { font-size: 14px; }
-  .footer-meta {
-    font-size: 13px;
-    color: var(--faint);
-  }
+/* ---------- about ---------- */
+.about { border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+.about-inner { padding-top: 96px; padding-bottom: 96px; }
+.about .eyebrow { display: block; margin-bottom: 44px; }
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+.profile-card {
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  box-shadow: 0 0 60px rgba(139, 124, 248, .12);
+}
+.profile-card img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+}
+.profile-meta {
+  padding: 22px 24px;
+  border-top: 1px solid var(--line-mid);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.profile-meta div { display: flex; justify-content: space-between; gap: 12px; }
+.profile-meta .k { color: var(--muted); }
+.profile-meta .v { text-align: right; }
+.profile-meta .v.accent { color: var(--accent); }
+.bio h2 {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+}
+.bio h2 span { color: var(--accent); }
+.bio > div > p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 680px;
+  text-wrap: pretty;
+}
+.bio > div > p:last-of-type { margin-bottom: 36px; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line-mid);
+  background: var(--line-mid);
+  margin-bottom: 36px;
+}
+.stat { padding: 20px 22px; background: var(--panel); }
+.stat-n { font-size: 26px; font-weight: 700; }
+.stat-n span { color: var(--cyan); }
+.stat-l {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: .08em;
+}
+.creds .eyebrow { display: block; margin-bottom: 20px; }
+.cred-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.cred-row:last-of-type { border-bottom: 1px solid var(--line); }
+.cred-row .k { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.cred-row .v { font-size: 14.5px; line-height: 1.55; color: var(--text); }
+.press {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--faint);
+  letter-spacing: .06em;
+  line-height: 2;
+}
 
-  /* ---------- Reveal animations ---------- */
-  .js .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .js .reveal.in {
-    opacity: 1;
-    transform: none;
-  }
+/* ---------- CTA ---------- */
+.cta {
+  border-top: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(139, 124, 248, .08), transparent);
+  scroll-margin-top: 80px;
+}
+.cta-inner {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cta h2 { font-size: 34px; font-weight: 700; letter-spacing: -.01em; margin: 0 0 12px; }
+.cta-prompt { font-family: var(--mono); font-size: 18px; color: var(--text); }
+.cta-prompt .cmd { color: var(--accent); }
+.cta-prompt .cursor { width: 10px; height: 20px; margin-left: 8px; vertical-align: -4px; background: var(--accent); }
+.btn-light {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--text);
+  color: var(--bg);
+  padding: 18px 34px;
+  transition: background .2s;
+  white-space: nowrap;
+}
+.btn-light:hover { background: var(--accent); }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .ticker-track { animation: none; }
-    .js .reveal { opacity: 1; transform: none; transition: none; }
-    .btn, .pillar, .focus-card, .contact-card { transition: none; }
-  }
+/* ---------- footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px var(--pad-x);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--faint);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer a:hover { color: var(--text); }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 900px) {
-    section { padding: 84px 0; }
-    .nav-links { display: none; }
-    .hero { min-height: 0; padding: 150px 0 70px; }
-    .pillars, .focus-grid, .contact-grid { grid-template-columns: 1fr; }
-    .advisory-layout { grid-template-columns: 1fr; gap: 44px; }
-    .advisory-side { position: static; }
-    .pillar, .contact-card { padding: 36px 28px; }
-    .step { grid-template-columns: 52px 1fr; gap: 18px; }
-  }
+/* ---------- responsive ---------- */
+@media (max-width: 1080px) {
+  .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 72px; padding-bottom: 64px; }
+  .hero-copy { max-width: 640px; }
+  .terminal { max-width: 640px; }
+  .cards { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .profile-card { max-width: 400px; }
+}
+@media (max-width: 900px) {
+  :root { --pad-x: 32px; }
+  .thesis { padding-top: 88px; padding-bottom: 88px; }
+  .about-inner { padding-top: 72px; padding-bottom: 72px; }
+}
+@media (max-width: 720px) {
+  .cred-row { grid-template-columns: 1fr; gap: 6px; }
+  .nav-links { gap: 20px; }
+  .cta h2 { font-size: 28px; }
+  .cta-prompt { font-size: 15px; }
+}
+@media (max-width: 600px) {
+  :root { --pad-x: 22px; }
+  .nav { padding-top: 16px; padding-bottom: 16px; }
+  .nav-links a:not(.btn-connect) { display: none; }
+  .hero { padding-top: 56px; }
+  .hero h1 { font-size: clamp(38px, 11vw, 44px); }
+  .card { padding: 36px 28px; }
+}
 </style>
 </head>
 <body>
 
-<div class="bg" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
 
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="#top" aria-label="Renewal Ventures — home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <circle cx="15" cy="15" r="13" stroke="#46d9a4" stroke-width="1.6" stroke-dasharray="61 21" stroke-linecap="round" transform="rotate(-50 15 15)"/>
-          <path d="M20.5 6.5 L24 4.5 L23 8.5 Z" fill="#46d9a4"/>
-          <circle cx="15" cy="15" r="4" fill="#46d9a4" fill-opacity="0.22"/>
-          <circle cx="15" cy="15" r="2" fill="#46d9a4"/>
-        </svg>
-      </span>
-      Renewal Ventures
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#what-we-do">What we do</a>
-      <a href="#focus">Focus</a>
-      <a href="#advisory">Advisory</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="nav-cta" href="#contact">Get in touch</a>
+<header class="nav">
+  <div class="brand">
+    <div class="brand-dot" aria-hidden="true"></div>
+    <span class="brand-name">RENEWAL_VENTURES</span>
   </div>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#thesis">/thesis</a>
+    <a href="#what-we-do">/what_we_do</a>
+    <a href="#about">/about</a>
+    <a href="#connect" class="btn-connect">/connect</a>
+  </nav>
 </header>
 
-<main id="top">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow reveal">Venture Capital &amp; AI Advisory</p>
-      <h1 class="reveal">Software is learning to <em>act.</em></h1>
-      <p class="hero-sub reveal">
-        Renewal Ventures backs pioneering agentic AI companies — and advises
-        corporations on putting cutting-edge AI to work, automating and scaling
-        the way they do business.
-      </p>
-      <div class="hero-ctas reveal">
-        <a class="btn btn-primary" href="#contact">
-          Pitch us your company
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="#advisory">
-          Automate your business
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+<main>
+  <!-- hero -->
+  <section class="hero container">
+    <div class="hero-copy" data-reveal>
+      <div class="eyebrow">// AGENTIC TECHNOLOGY CAPITAL</div>
+      <h1>We back and build the agents that will run <span>tomorrow's companies.</span></h1>
+      <p class="hero-sub">Renewal Ventures funds and incubates disruptive agentic startups — and rebuilds enterprises around AI that acts, not just answers.</p>
+      <div><a href="#connect" class="btn-primary">GET IN TOUCH →</a></div>
+    </div>
+    <div class="terminal" data-reveal aria-hidden="true">
+      <div class="terminal-bar">
+        <span class="host"><span class="terminal-dot"></span>renewal@agent-mesh — live</span>
+        <span class="scenario" id="scenario-name">logistics</span>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-lines"></div>
+        <div class="terminal-prompt">$ <span class="cursor"></span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TICKER ============ -->
+  <!-- ticker -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>Autonomous Agents</span><span>Enterprise Automation</span><span>Agentic Infrastructure</span><span>Vertical AI</span><span>Applied Frontier Models</span><span>Human–Agent Collaboration</span>
-    </div>
-    <div class="ticker-track">
-      <span>Autonomous Agents</span><span>Enterprise Automation</span><span>Agentic Infrastructure</span><span>Vertical AI</span><span>Applied Frontier Models</span><span>Human–Agent Collaboration</span>
+      <span>AUTONOMOUS OPS</span><span class="d">◆</span><span>MULTI-AGENT SYSTEMS</span><span class="d">◆</span><span>HUMAN-ON-THE-LOOP</span><span class="d">◆</span><span>ENTERPRISE REWIRED</span><span class="d">◆</span><span>ZERO-TO-ONE INCUBATION</span><span class="d">◆</span><span>AUTONOMOUS OPS</span><span class="d">◆</span><span>MULTI-AGENT SYSTEMS</span><span class="d">◆</span><span>HUMAN-ON-THE-LOOP</span><span class="d">◆</span><span>ENTERPRISE REWIRED</span><span class="d">◆</span><span>ZERO-TO-ONE INCUBATION</span><span class="d">◆</span>
     </div>
   </div>
 
-  <!-- ============ WHAT WE DO ============ -->
-  <section id="what-we-do">
+  <!-- thesis -->
+  <section id="thesis" class="thesis container">
+    <div class="thesis-inner" data-reveal>
+      <span class="eyebrow">[ THE THESIS ]</span>
+      <h2>Every company is about to be rebuilt around software that <span>does the work itself.</span> The winners won't adopt agents — they'll be made of them.</h2>
+      <p>We sit on both sides of that shift: capital and co-founding for the startups building it, and hands-on advisory for the enterprises who refuse to be disrupted by it.</p>
+    </div>
+  </section>
+
+  <!-- what we do -->
+  <section id="what-we-do" class="offerings" aria-label="What we do">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">What we do</p>
-        <h2>Two practices. <em>One thesis.</em></h2>
-        <p class="section-sub">
-          The companies defining the next decade are building software that acts —
-          and the enterprises that thrive will be the ones that adopt it first.
-          We work on both sides of that shift.
-        </p>
+      <span class="eyebrow" data-reveal>[ WHAT WE DO ]</span>
+    </div>
+    <div class="cards container">
+      <div class="card" data-reveal>
+        <div class="card-num">01 / BACK</div>
+        <h3>Fund the frontier</h3>
+        <p>Conviction checks into founders building autonomous software that owns outcomes, not features.</p>
+        <div class="card-specs">
+          <div><span>stage</span><span>pre-seed → series A</span></div>
+          <div><span>focus</span><span>agentic infra + apps</span></div>
+          <div><span>style</span><span>lead or follow</span></div>
+        </div>
       </div>
-      <div class="pillars">
-        <article class="pillar reveal">
-          <p class="pillar-num">01</p>
-          <h3>Invest</h3>
-          <p class="pillar-tag">Venture Capital</p>
-          <p>
-            We back founders building agentic software — systems that reason, plan,
-            and execute real work, not just answer questions.
-          </p>
-          <ul>
-            <li><strong>Early conviction.</strong>&nbsp;Pre-seed through Series A, leading or following.</li>
-            <li><strong>Agent-native only.</strong>&nbsp;Products where autonomy is the core, not a feature.</li>
-            <li><strong>Ground truth on distribution.</strong>&nbsp;Our advisory work keeps us inside enterprise buying decisions — our founders hear what corporations actually adopt.</li>
-          </ul>
-        </article>
-        <article class="pillar reveal">
-          <p class="pillar-num">02</p>
-          <h3>Advise</h3>
-          <p class="pillar-tag">Corporate AI Advisory</p>
-          <p>
-            We help corporations move from AI pilots to production — implementing
-            cutting-edge systems that automate core workflows and scale operations.
-          </p>
-          <ul>
-            <li><strong>Strategy to shipped.</strong>&nbsp;From opportunity mapping to deployed, measured systems.</li>
-            <li><strong>Automation with guardrails.</strong>&nbsp;Governance, oversight, and evaluation built in from day one.</li>
-            <li><strong>A view of the frontier.</strong>&nbsp;We see what's next through our portfolio — and bring what works to your P&amp;L.</li>
-          </ul>
-        </article>
+      <div class="card" data-reveal>
+        <div class="card-num">02 / BUILD</div>
+        <h3>Incubate in-house</h3>
+        <p>We co-found agentic companies from zero — thesis, founding team, architecture, and first customers.</p>
+        <div class="card-specs">
+          <div><span>model</span><span>venture studio</span></div>
+          <div><span>input</span><span>thesis + operators</span></div>
+          <div><span>output</span><span>revenue-ready co.</span></div>
+        </div>
+      </div>
+      <div class="card" data-reveal>
+        <div class="card-num">03 / ADVISE</div>
+        <h3>Rewire the enterprise</h3>
+        <p>Board-level AI automation strategy — from pilot to production to P&amp;L impact, embedded with your teams.</p>
+        <div class="card-specs">
+          <div><span>who</span><span>C-suite + ops leaders</span></div>
+          <div><span>scope</span><span>core operations</span></div>
+          <div><span>measure</span><span>margin, not demos</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ THESIS ============ -->
-  <section class="thesis">
-    <div class="container">
-      <figure class="reveal">
-        <blockquote>
-          The next decade of enterprise value will be created by software that
-          <em>works</em> — not software that waits.
-        </blockquote>
-        <figcaption>Our thesis</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ FOCUS ============ -->
-  <section id="focus">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Where we invest</p>
-        <h2>The agentic stack, <em>end to end.</em></h2>
-        <p class="section-sub">
-          We look for teams building where autonomy compounds — from the
-          infrastructure that makes agents reliable to the vertical products
-          that put them to work.
-        </p>
-      </div>
-      <div class="focus-grid">
-        <article class="focus-card reveal">
-          <div class="focus-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 5.5h4.5V9M11 14.5H6.5V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Agentic Infrastructure</h3>
-          <p>Orchestration, memory, evaluation, and security — the picks and shovels that make fleets of agents reliable enough for production.</p>
-        </article>
-        <article class="focus-card reveal">
-          <div class="focus-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17V9m7 8V3m7 14v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Vertical Agents</h3>
-          <p>Domain-expert agents for finance, legal, healthcare, and industry — products that own an outcome, not just a task.</p>
-        </article>
-        <article class="focus-card reveal">
-          <div class="focus-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l2.8 2.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Autonomous Operations</h3>
-          <p>Back office, support, sales development, and supply chain — the workflows where agents already outwork headcount.</p>
-        </article>
-        <article class="focus-card reveal">
-          <div class="focus-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="6.5" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M2 17c0-2.5 2-4.5 4.5-4.5S11 14.5 11 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 3.5a3 3 0 0 1 0 7M14.5 12.7c2 .6 3.5 2.3 3.5 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Human–Agent Collaboration</h3>
-          <p>Interfaces, oversight, and trust tooling for the hybrid workforce — where people set direction and agents deliver.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ADVISORY ============ -->
-  <section id="advisory">
-    <div class="container advisory-layout">
-      <div class="advisory-side reveal">
-        <p class="kicker">Advisory</p>
-        <h2>From pilot to <em>production.</em></h2>
-        <p class="section-sub">
-          Most enterprise AI initiatives stall at the demo. Our advisory practice
-          exists to close that gap — pairing frontier-model expertise with the
-          operating discipline to ship systems that move real numbers.
-        </p>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <span class="step-num" aria-hidden="true">01</span>
-          <div>
-            <h3>Diagnose</h3>
-            <p>We map your workflows and unit economics to find the highest-ROI automation candidates — the places where agents pay for themselves fastest.</p>
+  <!-- about -->
+  <section id="about" class="about">
+    <div class="about-inner container">
+      <span class="eyebrow" data-reveal>[ ABOUT ]</span>
+      <div class="about-grid">
+        <div class="profile-card" data-reveal>
+          <img src="assets/ryan-feit.jpg" alt="Ryan Feit, Managing Partner of Renewal Ventures" width="1354" height="1100">
+          <div class="profile-meta">
+            <div><span class="k">name</span><span class="v">RYAN FEIT</span></div>
+            <div><span class="k">role</span><span class="v accent">MANAGING PARTNER</span></div>
+            <div><span class="k">founded</span><span class="v">SEEDINVEST</span></div>
+            <div><span class="k">exit</span><span class="v">CIRCLE (USDC)</span></div>
+            <div><span class="k">prior</span><span class="v">WELLSPRING · LEHMAN</span></div>
+            <div><span class="k">education</span><span class="v">WHARTON MBA</span></div>
           </div>
         </div>
-        <div class="step reveal">
-          <span class="step-num" aria-hidden="true">02</span>
-          <div>
-            <h3>Design</h3>
-            <p>We architect the agentic system around your data, tools, and risk posture — with evaluation and human oversight designed in, not bolted on.</p>
+        <div class="bio">
+          <div data-reveal>
+            <h2>Led by a founder who <span>changed the law</span> to fund the future.</h2>
+            <p>Ryan Feit co-founded SeedInvest, the platform that changed early-stage startup financing in the United States. He was instrumental in the passage of the 2012 JOBS Act — rewriting 80-year-old securities laws so entrepreneurs could raise capital over the internet — then worked with the SEC, FINRA, the White House, and the Treasury on its implementation.</p>
+            <p>As CEO he scaled SeedInvest to 850,000+ investors and 500+ funded startups before selling to Circle — principal architect of USDC, the dollar digital currency behind $20T+ in transactions across 190+ countries. There he joined the Executive Leadership Team and co-founded Circle Ventures, which has funded 100+ companies.</p>
           </div>
-        </div>
-        <div class="step reveal">
-          <span class="step-num" aria-hidden="true">03</span>
-          <div>
-            <h3>Deploy</h3>
-            <p>We build and ship into production alongside your team, transferring the capability — not renting it to you indefinitely.</p>
+          <div class="stats" data-reveal>
+            <div class="stat"><div class="stat-n">850K<span>+</span></div><div class="stat-l">INVESTORS</div></div>
+            <div class="stat"><div class="stat-n">500<span>+</span></div><div class="stat-l">STARTUPS FUNDED</div></div>
+            <div class="stat"><div class="stat-n">100<span>+</span></div><div class="stat-l">CIRCLE VENTURES COS.</div></div>
+            <div class="stat"><div class="stat-n">$20T<span>+</span></div><div class="stat-l">USDC TRANSACTIONS</div></div>
           </div>
-        </div>
-        <div class="step reveal">
-          <span class="step-num" aria-hidden="true">04</span>
-          <div>
-            <h3>Scale</h3>
-            <p>We measure impact, harden reliability, and expand automation across the organization — compounding the advantage quarter over quarter.</p>
+          <div class="creds" data-reveal>
+            <span class="eyebrow">[ AI CREDENTIALS ]</span>
+            <div class="cred-row"><span class="k">INVESTMENTS</span><span class="v">Has backed leading AI companies including OpenAI and Anthropic</span></div>
+            <div class="cred-row"><span class="k">CHAIR / AI ADVISORY</span><span class="v">AI Advisory Committee of the world's largest fintech investment bank</span></div>
+            <div class="cred-row"><span class="k">CHAIR / BOARD</span><span class="v">Leading online real-estate investment platform ($750M+ AUM) — advising its AI implementation</span></div>
+            <div class="cred-row"><span class="k">SEMINARS / ENTERPRISE AI</span><span class="v">Enterprise AI implementation &amp; automation for hundreds of CEOs, Boards of Directors, and C-Suites</span></div>
+            <div class="press">EXPERT COMMENTARY IN&nbsp;&nbsp;WSJ · WASHINGTON POST · NYT · THE ECONOMIST · FORTUNE · INC. · CNBC</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head reveal" style="margin-bottom:0;">
-        <p class="kicker">Contact</p>
-        <h2>Let's build what's <em>next.</em></h2>
+  <!-- CTA -->
+  <section id="connect" class="cta">
+    <div class="cta-inner container" data-reveal>
+      <div>
+        <h2>The renewal has already started.</h2>
+        <div class="cta-prompt">renewal@ventures:~$ <span class="cmd">get_in_touch</span><span class="cursor" aria-hidden="true"></span></div>
       </div>
-      <div class="contact-grid">
-        <article class="contact-card reveal">
-          <p class="pillar-tag">For Founders</p>
-          <h3>Building something agentic?</h3>
-          <p>
-            If your software acts — plans, executes, and delivers outcomes —
-            we want to see it, at whatever stage it's at.
-          </p>
-          <a class="btn btn-primary" href="mailto:pitch@renewalventures.com">
-            pitch@renewalventures.com
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </article>
-        <article class="contact-card reveal">
-          <p class="pillar-tag">For Corporations</p>
-          <h3>Ready to automate and scale?</h3>
-          <p>
-            Tell us where your operation strains, and we'll show you what
-            cutting-edge AI can take off your plate — in production, not in a deck.
-          </p>
-          <a class="btn btn-ghost" href="mailto:advisory@renewalventures.com">
-            advisory@renewalventures.com
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </article>
-      </div>
+      <a href="mailto:team@renewalvc.com" class="btn-light">START A CONVERSATION</a>
     </div>
   </section>
-
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="container footer-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
-          <circle cx="15" cy="15" r="13" stroke="#46d9a4" stroke-width="1.6" stroke-dasharray="61 21" stroke-linecap="round" transform="rotate(-50 15 15)"/>
-          <path d="M20.5 6.5 L24 4.5 L23 8.5 Z" fill="#46d9a4"/>
-          <circle cx="15" cy="15" r="4" fill="#46d9a4" fill-opacity="0.22"/>
-          <circle cx="15" cy="15" r="2" fill="#46d9a4"/>
-        </svg>
-      </span>
-      Renewal Ventures
-    </a>
-    <p class="footer-meta">© <span id="year">2026</span> Renewal Ventures. Investing in the agentic era.</p>
+<footer class="footer">
+  <span>© 2026 RENEWAL_VENTURES</span>
+  <div class="footer-links">
+    <a href="mailto:team@renewalvc.com">team@renewalvc.com</a>
+    <span>X / LINKEDIN</span>
+    <span>SF · NYC · LON</span>
   </div>
 </footer>
 
 <script>
-  // Scroll-linked nav background
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
+  /* ---------- terminal scenario cycler ---------- */
+  var scripts = [
+    { name: "logistics", lines: [
+      { t: "$ deploy agent --sector logistics", c: "#67e8f9", d: ".2s" },
+      { t: "→ scanning 14,208 workflows…", c: "#9d97c4", d: ".9s" },
+      { t: "→ 312 automatable · $4.2M/yr recoverable", c: "#9d97c4", d: "1.6s" },
+      { t: "✓ agent live · human hours ↓ 61%", c: "#8b7cf8", d: "2.3s" }
+    ]},
+    { name: "finance", lines: [
+      { t: "$ deploy agent --sector finance", c: "#67e8f9", d: ".2s" },
+      { t: "→ ingesting 9 ERP systems, 22yr of ledgers…", c: "#9d97c4", d: ".9s" },
+      { t: "→ close cycle: 11 days → 6 hours", c: "#9d97c4", d: "1.6s" },
+      { t: "✓ agent live · audit trail intact", c: "#8b7cf8", d: "2.3s" }
+    ]},
+    { name: "support", lines: [
+      { t: "$ deploy agent --sector support", c: "#67e8f9", d: ".2s" },
+      { t: "→ resolving tier-1 + tier-2 autonomously…", c: "#9d97c4", d: ".9s" },
+      { t: "→ resolution rate 84% · CSAT ↑ 12pts", c: "#9d97c4", d: "1.6s" },
+      { t: "✓ agent live · humans on the loop", c: "#8b7cf8", d: "2.3s" }
+    ]}
+  ];
+
+  var linesEl = document.getElementById("terminal-lines");
+  var nameEl = document.getElementById("scenario-name");
+  var current = 0;
+
+  function render(i) {
+    var sc = scripts[i];
+    nameEl.textContent = sc.name;
+    linesEl.textContent = "";
+    sc.lines.forEach(function (ln) {
+      var div = document.createElement("div");
+      div.className = "ln";
+      div.textContent = ln.t;
+      div.style.color = ln.c;
+      div.style.animationDelay = ln.d;
+      linesEl.appendChild(div);
+    });
+  }
+
+  render(0);
+  if (!reduced) {
+    setInterval(function () {
+      current = (current + 1) % scripts.length;
+      render(current);
+    }, 7000);
+  }
+
+  /* ---------- scroll reveals ---------- */
+  requestAnimationFrame(function () {
+    var els = document.querySelectorAll("[data-reveal]");
+    if (reduced || !("IntersectionObserver" in window)) return;
+
+    function reveal(el) {
+      if (el.dataset.revealed) return;
+      el.dataset.revealed = "1";
+      el.style.opacity = "1";
+      el.style.transform = "none";
     }
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${Math.min(i % 4 * 70, 210)}ms`;
-    observer.observe(el);
-  });
 
-  // Current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach(function (el, i) {
+      // only hide elements below the fold; in-viewport content stays visible
+      var r = el.getBoundingClientRect();
+      if (r.top > window.innerHeight * 0.9) {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(26px)";
+      }
+      el.style.transition =
+        "opacity .7s ease " + (i % 3) * 0.12 + "s, transform .8s cubic-bezier(.2,.7,.2,1) " + (i % 3) * 0.12 + "s";
+      io.observe(el);
+    });
+
+    // fallback: if IO never fires, force-reveal on scroll position + timer
+    function sweep() {
+      els.forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.95) reveal(el);
+      });
+    }
+    window.addEventListener("scroll", sweep, { passive: true });
+    setTimeout(sweep, 800);
+    setTimeout(function () { els.forEach(reveal); }, 4000);
+  });
+})();
 </script>
 
 </body>
